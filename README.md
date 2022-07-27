@@ -1,10 +1,10 @@
 # Typescript-train
----
+
 ## goal
 > LEARN, LEARN, LEARN!!
 ## HOW
 > READ, READ, READ!! && DO, DO, DO!!
----
+
 <br>
 <br>
 
