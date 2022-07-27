@@ -4,6 +4,7 @@
 > LEARN, LEARN, LEARN!!
 ## HOW
 > READ, READ, READ!! && DO, DO, DO!!
+>> adn trying to explain them down below in own words. ***if you understand it, you can explain it.***
 
 <br>
 <br>
