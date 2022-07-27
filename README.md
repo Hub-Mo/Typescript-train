@@ -27,3 +27,11 @@
   >“Many client-specific interfaces are better than one general-purpose interface.”
 - [] D = Dependency Inversion Principle (DIP)
   >“Depend upon abstractions, [not] concretions.”
+
+<br>
+<br>
+
+![just-do-it-shia](https://user-images.githubusercontent.com/100337229/181348501-c3bc8e52-c299-4175-ba55-fb2c8fda83d8.gif)
+
+
+
