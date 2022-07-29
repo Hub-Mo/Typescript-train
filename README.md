@@ -11,13 +11,13 @@
 
 # What to learn/ better understand and master
 ## The 4 pillars of OOP
-1. [] Abstraction
-1. [] Encapsulation
-1. [] Inheritance
-1. [] Polymorphism
+1. [x] Abstraction
+1. [x] Encapsulation
+1. [x] Inheritance
+1. [x] Polymorphism
 
 ## SOLID 
-- [] S = Single Responsibility Principle (SRP)
+- [x] S = Single Responsibility Principle (SRP)
   >“There should never be more than one reason for a class to change.”
 - [] O = Open-Close Principle (OCP)
   >“Software entities … should be open for extension, but closed for modification.”
