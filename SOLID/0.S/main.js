@@ -1,6 +1,4 @@
 import { Car } from './Car';
-import { Radio } from './radio';
-import { Engine } from './Engine';
 // When you see <cast>variable this is a "cast" of a variable, explicitly telling the code what the type of this variable will be.
 // This is sometimes needed when a default JS function does not return a precise enough Type.
 // I need to cast this to HtmlElement because the default Element return type is not specific to the HTML context (because some versions of JS can also be used in the backend, see node.js)
@@ -13,9 +11,7 @@ const addFuelInput = document.querySelector('#add-fuel-input');
 const fuelLevelElement = document.querySelector('#fuel-level');
 const milesElement = document.querySelector('#miles-value');
 const audioElement = document.querySelector('#car-music');
-let radio = new Radio();
-let engine = new Engine();
-let car = new Car(100, radio, engine);
+let car = new Car();
 musicToggleElement.addEventListener('click', () => {
     if (car.radio.musicLevel === 0) {
         car.radio.turnMusicOn();
@@ -45,8 +41,8 @@ engineToggleElement.addEventListener('click', () => {
 });
 addFuelForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    car.addFuel(Number(addFuelInput.value));
-    fuelLevelElement.innerText = car.fuel.toString();
+    car.engine.addFuel(Number(addFuelInput.value));
+    fuelLevelElement.innerText = car.engine.fuel.toString();
 });
 setInterval(() => {
     car.drive();
@@ -54,7 +50,7 @@ setInterval(() => {
     // this <cast> will only tell TypeScript that the value is a string, but the actual variable in JS is not changed in any way: it is in reality still a number
     milesElement.innerText = (car.miles);
     // This .toString() will actually convert the value in JavaScript from an integer to a string
-    fuelLevelElement.innerText = car.fuel.toString();
+    fuelLevelElement.innerText = car.engine.fuel.toString();
     if (car.radio.musicLevel === 0) {
         audioElement.pause();
     }
