@@ -13,7 +13,7 @@ const milesElement = <HTMLElement>document.querySelector('#miles-value');
 const audioElement = <HTMLAudioElement>document.querySelector('#car-music');
 
 
-let car = new Car();
+let car = new Car(100);
 
 
 musicToggleElement.addEventListener('click', () => {

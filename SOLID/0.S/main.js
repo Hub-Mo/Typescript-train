@@ -11,7 +11,7 @@ const addFuelInput = document.querySelector('#add-fuel-input');
 const fuelLevelElement = document.querySelector('#fuel-level');
 const milesElement = document.querySelector('#miles-value');
 const audioElement = document.querySelector('#car-music');
-let car = new Car();
+let car = new Car(100);
 musicToggleElement.addEventListener('click', () => {
     if (car.radio.musicLevel === 0) {
         car.radio.turnMusicOn();
