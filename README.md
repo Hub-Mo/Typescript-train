@@ -22,8 +22,17 @@
   >> seperated engine and Radio from the car. also seperated fuel and put it with the engine.
   the fuel consumtion is getting called from the car drive method. and the engine is the one that consumes the fuel.
   added method handleFuel() inside the Egnine class.
-- [] O = Open-Close Principle (OCP)
-  >“Software entities … should be open for extension, but closed for modification.”
+  - [x] O = Open-Close Principle (OCP)
+  >  “Software entities … should be open for extension, but closed for modification.”
+  >>   in other words. you should be able to build your classes in a way that you can extend them via childclasses
+      and once you created the class it no longer needs to be changed.
+
+    to make this true in this exercise i added an interface makesSound and implemented it to the animals classes.
+  also gave every animal class an method makeSound and removed the makeSound method in the zoo. so every new animal
+must have a makesound method that we them output in the function and we dont have to touch the zoo or the function to display them.
+
+<br/>
+
 - [] L = Liskov Substitution Principle (LSP)
   >“Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.”
 - [] I = Interface Segregation Principle
