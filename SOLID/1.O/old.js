@@ -25,7 +25,7 @@ class Cat {
         return this._type;
     }
     makeSound() {
-        return 'woef woef';
+        return 'Miauw miauw';
     }
 }
 class Parrot {

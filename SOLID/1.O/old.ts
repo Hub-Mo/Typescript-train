@@ -43,7 +43,7 @@ class Cat implements IMakesSound {
     }
 
     makeSound() : string {
-        return 'woef woef'
+        return 'Miauw miauw'
     }
 }
 
