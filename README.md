@@ -19,6 +19,9 @@
 ## SOLID 
 - [x] S = Single Responsibility Principle (SRP)
   >“There should never be more than one reason for a class to change.”
+  >> seperated engine and Radio from the car. also seperated fuel and put it with the engine.
+  the fuel consumtion is getting called from the car drive method. and the engine is the one that consumes the fuel.
+  added method handleFuel() inside the Egnine class.
 - [] O = Open-Close Principle (OCP)
   >“Software entities … should be open for extension, but closed for modification.”
 - [] L = Liskov Substitution Principle (LSP)
