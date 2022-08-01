@@ -1,20 +1,12 @@
-import {IdiscountType} from "./Interface";
-
-
-export class VariableDiscount implements IdiscountType {
-    //private _type: discountType;
-    private _value: number;
-
-    constructor(value: number) {
+export class VariableDiscount {
+    constructor(value) {
         //this._type = type;
         this._value = value;
-
         /*        if(this._type != 'none' && value <= 0) {
                     throw new Error('You cannot create a '+ this._type + ' discount with a negative value');
                 }*/
     }
-
-    apply(price: number): number {
+    apply(price) {
         //@todo: instead of using magic values as string in this, it would be a lot better to change them into constant. This would protect us from misspellings. Can you improve this?
         /*        if(this._type === "none")  {
                     return price;
@@ -28,8 +20,7 @@ export class VariableDiscount implements IdiscountType {
                     throw new Error('Invalid type of discount');
                 }*/
     }
-
-    showCalculation(price: number): string {
+    showCalculation(price) {
         /*        if(this._type === "none")  {
                     return "No discount";
                 }
