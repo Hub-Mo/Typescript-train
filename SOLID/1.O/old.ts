@@ -1,8 +1,14 @@
-class Dog {
-    private _name;
+interface IMakesSound {
+    makeSound: () => string;
+}
 
-    set name(value) {
+class Dog implements IMakesSound{
+    private _name : string;
+    private _type : string;
+
+    constructor(value) {
         this._name = value;
+        this._type = 'dog';
     }
 
     get name() {
@@ -10,15 +16,22 @@ class Dog {
     }
 
     get type() {
-        return 'dog';
+        return this._type;
+    }
+
+    makeSound() : string {
+        return 'woef woef'
     }
 }
 
-class Cat {
-    private _name;
+class Cat implements IMakesSound {
 
-    set name(value) {
+    private _name : string;
+    private _type : string;
+
+    constructor(value) {
         this._name = value;
+        this._type = 'cat';
     }
 
     get name() {
@@ -26,15 +39,21 @@ class Cat {
     }
 
     get type() {
-        return 'cat';
+        return this._type;
+    }
+
+    makeSound() : string {
+        return 'woef woef'
     }
 }
 
-class Parrot {
-    private _name;
+class Parrot implements IMakesSound {
+    private _name : string;
+    private _type : string;
 
-    set name(value) {
+    constructor(value) {
         this._name = value;
+        this._type = 'parrot';
     }
 
     get name() {
@@ -42,7 +61,55 @@ class Parrot {
     }
 
     get type() {
-        return 'parrot';
+        return this._type;
+    }
+
+    makeSound() : string {
+        return 'I am a pirate'
+    }
+}
+
+class Penguin implements IMakesSound {
+    private _name : string;
+    private _type : string;
+
+    constructor(value) {
+        this._name = value;
+        this._type = 'penguin';
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return this._type;
+    }
+
+    makeSound() : string {
+        return 'krrwaarwkk'
+    }
+}
+
+class Bear implements IMakesSound {
+    private _name : string;
+    private _type : string;
+
+    constructor(value) {
+        this._name = value;
+        this._type = 'Bear';
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get type() {
+        return this._type;
+    }
+
+    makeSound() : string {
+        return 'raawrrr'
     }
 }
 
@@ -56,25 +123,17 @@ class Zoo {
     get animals(): Array<Object> {
         return this._animals;
     }
-
-    public makeSound(animal: object) : string {
-        switch(animal.type) {
-            case 'cat':
-                return 'Miauw';
-            case 'dog':
-                return 'Woef';
-            case 'parrot':
-                return 'I am a pirate';
-            default:
-                throw new Error('Unknown type: '+ animal.type);
-        }
-    }
 }
 let zoo = new Zoo;
-zoo.addAnimal(new Cat);
-zoo.addAnimal(new Dog);
-zoo.addAnimal(new Parrot);
+zoo.addAnimal(new Cat('Oliver'));
+zoo.addAnimal(new Dog('Marley'));
+zoo.addAnimal(new Parrot('Jumpers'));
+zoo.addAnimal(new Penguin('Roger'));
+zoo.addAnimal(new Bear('Jamal'));
+
+console.log(zoo)
 
 zoo.animals.forEach((animal) => {
-    document.querySelector('#target').innerHTML += (animal.type + ": " + zoo.makeSound(animal) + "<br>");
+    console.log(animal);
+    document.querySelector('#target').innerHTML += (animal.type + ": " + animal.makeSound() + "<br>");
 });
