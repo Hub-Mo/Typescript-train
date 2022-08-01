@@ -1,7 +1,7 @@
 import { Radio } from './radio';
 import { Engine } from './Engine';
 export class Car {
-    constructor() {
+    constructor(maxFuelCapacity) {
         //it is convention to start property names in TypeScript with an underscore.
         // If you want to known why, remove the underscore and see if your compiler is throwing you an error!
         this._miles = 0;
@@ -9,7 +9,7 @@ export class Car {
         // the only subtle difference is that you can write once to the variable inside the constructor
         this.FUEL_MILEAGE = 10;
         this._Radio = new Radio();
-        this._Engine = new Engine(100);
+        this._Engine = new Engine(maxFuelCapacity);
     }
     get miles() {
         return this._miles;

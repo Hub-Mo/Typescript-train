@@ -14,9 +14,9 @@ export class Car{
     // the only subtle difference is that you can write once to the variable inside the constructor
     private readonly FUEL_MILEAGE: number = 10;
 
-    constructor() {
+    constructor(maxFuelCapacity) {
         this._Radio = new Radio();
-        this._Engine = new Engine(100);
+        this._Engine = new Engine(maxFuelCapacity);
     }
 
     get miles(): number {
@@ -24,8 +24,6 @@ export class Car{
     }
 
 //Take attention to these getter and setters
-
-
     get radio(): Radio {
         return this._Radio;
     }
@@ -33,10 +31,6 @@ export class Car{
     get engine(): Engine {
         return this._Engine;
     }
-
-
-
-
 
     drive() {
         if(this._Engine.status === false || this._Engine.fuel <= 0) {
