@@ -2,7 +2,7 @@ export class NoDiscount {
     apply(price) {
         return price;
     }
-    showCalculation(price) {
+    showCalculation() {
         return "No discount";
     }
 }
