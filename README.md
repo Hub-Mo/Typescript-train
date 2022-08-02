@@ -35,6 +35,7 @@ must have a makesound method that we them output in the function and we dont hav
 
 - [ ] L = Liskov Substitution Principle (LSP)
   >“Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.”
+  >> 
 - [ ] I = Interface Segregation Principle
   >“Many client-specific interfaces are better than one general-purpose interface.”
 - [ ] D = Dependency Inversion Principle (DIP)
