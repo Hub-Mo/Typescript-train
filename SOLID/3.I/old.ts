@@ -1,13 +1,16 @@
 interface UserAuth {
-    checkPassword(password: string) : boolean;
-    resetPassword();
     setGoogleToken(token : string);
     checkGoogleLogin(token : string) : boolean;
     setFacebookToken(token : string);
     getFacebookLogin(token : string) : boolean;
 }
 
-class User implements UserAuth {
+interface UserAuthPass {
+    checkPassword(password: string) : boolean;
+    resetPassword();
+}
+
+class User implements UserAuth, UserAuthPass {
     private _password : string = 'user';
     private _facebookToken : string;
     private _googleToken : string;
@@ -41,29 +44,12 @@ class User implements UserAuth {
 }
 
 //admin cannot use google or facebook token
-class Admin implements UserAuth {
+class Admin implements UserAuthPass {
     private _password : string = 'admin';
-
-    checkGoogleLogin(token: string): boolean {
-        return false;
-    }
 
     checkPassword(password: string): boolean {
         return (password === this._password);
     }
-
-    getFacebookLogin(token: string): boolean {
-        return false;
-    }
-
-    setFacebookToken() {
-        throw new Error('Function not supported for admins');
-    }
-
-    setGoogleToken() {
-        throw new Error('Function not supported for admins');
-    }
-
     resetPassword() {
         this._password = prompt('What is your new password?');
     }
