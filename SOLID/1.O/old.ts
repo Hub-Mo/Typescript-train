@@ -2,14 +2,22 @@ interface IMakesSound {
     makeSound: () => string;
 }
 
-class Dog implements IMakesSound{
+abstract class Animal implements IMakesSound{
+     _name : string;
+     _type : string;
+}
+class Dog extends Animal{
     private _name : string;
     private _type : string;
 
     constructor(value) {
+        super();
         this._name = value;
         this._type = 'dog';
     }
+/*    constructor(value) {
+
+    }*/
 
     get name() {
         return this._name;
@@ -24,7 +32,7 @@ class Dog implements IMakesSound{
     }
 }
 
-class Cat implements IMakesSound {
+class Cat extends Animal {
 
     private _name : string;
     private _type : string;
@@ -47,7 +55,7 @@ class Cat implements IMakesSound {
     }
 }
 
-class Parrot implements IMakesSound {
+class Parrot extends Animal {
     private _name : string;
     private _type : string;
 
@@ -69,7 +77,7 @@ class Parrot implements IMakesSound {
     }
 }
 
-class Penguin implements IMakesSound {
+class Penguin extends Animal {
     private _name : string;
     private _type : string;
 
@@ -91,7 +99,7 @@ class Penguin implements IMakesSound {
     }
 }
 
-class Bear implements IMakesSound {
+class Bear extends Animal {
     private _name : string;
     private _type : string;
 

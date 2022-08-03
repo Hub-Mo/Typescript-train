@@ -43,6 +43,7 @@ to make this happen, i created 3 classes to replace the union.
 an interface can better be devided then to use more rules in 1 interface.
 - [x] D = Dependency Inversion Principle (DIP)
   >“Depend upon abstractions, [not] concretions.”
+  >> every oven needs to able to work in every restaurant and every restaurant can work with every oven.
 
 <br>
 <br>
