@@ -104,19 +104,6 @@ document.querySelector('#login-form').addEventListener('submit', (event) => {
     }
     debugger;
 
-/*    switch(true) {
-        case typePasswordElement.checked:
-            auth = user.checkPassword(passwordElement.value);
-            break;
-        case typeGoogleElement.checked:
-            auth = user.checkGoogleLogin('secret_token_google');
-            break;
-        case typeFacebookElement.checked:
-            debugger;
-            auth = user.getFacebookLogin('secret_token_fb');
-            break;
-    }*/
-
     if(auth) {
         alert('login success');
     } else {
