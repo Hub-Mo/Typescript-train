@@ -1,7 +1,13 @@
-class Dog {
+class Animal {
     constructor(value) {
         this._name = value;
+    }
+}
+class Dog extends Animal {
+    constructor(value) {
+        super(value);
         this._type = 'dog';
+        this._sound = 'woef woef';
     }
     get name() {
         return this._name;
@@ -10,13 +16,14 @@ class Dog {
         return this._type;
     }
     makeSound() {
-        return 'woef woef';
+        return this._sound;
     }
 }
-class Cat {
+class Cat extends Animal {
     constructor(value) {
-        this._name = value;
+        super(value);
         this._type = 'cat';
+        this._sound = 'miauw';
     }
     get name() {
         return this._name;
@@ -25,13 +32,14 @@ class Cat {
         return this._type;
     }
     makeSound() {
-        return 'Miauw miauw';
+        return this._sound;
     }
 }
-class Parrot {
+class Parrot extends Animal {
     constructor(value) {
-        this._name = value;
+        super(value);
         this._type = 'parrot';
+        this._sound = 'i am a pirate';
     }
     get name() {
         return this._name;
@@ -40,12 +48,13 @@ class Parrot {
         return this._type;
     }
     makeSound() {
-        return 'I am a pirate';
+        return this._sound;
     }
 }
-class Penguin {
+class Penguin extends Animal {
     constructor(value) {
-        this._name = value;
+        super(value);
+        this._sound = 'kwwraawk';
         this._type = 'penguin';
     }
     get name() {
@@ -55,13 +64,14 @@ class Penguin {
         return this._type;
     }
     makeSound() {
-        return 'krrwaarwkk';
+        return this._sound;
     }
 }
-class Bear {
+class Bear extends Animal {
     constructor(value) {
-        this._name = value;
-        this._type = 'Bear';
+        super(value);
+        this._sound = 'raawrr';
+        this._type = 'bear';
     }
     get name() {
         return this._name;
@@ -70,7 +80,7 @@ class Bear {
         return this._type;
     }
     makeSound() {
-        return 'raawrrr';
+        return this._sound;
     }
 }
 class Zoo {

@@ -3,21 +3,25 @@ interface IMakesSound {
 }
 
 abstract class Animal implements IMakesSound{
-     _name : string;
-     _type : string;
-}
-class Dog extends Animal{
-    private _name : string;
-    private _type : string;
+    protected _name : string;
+    protected _type : string;
+    protected _sound : string;
 
     constructor(value) {
-        super();
         this._name = value;
-        this._type = 'dog';
     }
-/*    constructor(value) {
+    abstract makeSound(): string;
+    abstract get type();
+}
+class Dog extends Animal{
+    protected _name : string;
+    protected _type: string = 'dog';
+    protected _sound: string = 'woef woef';
 
-    }*/
+    constructor(value) {
+        super(value);
+
+    }
 
     get name() {
         return this._name;
@@ -28,19 +32,18 @@ class Dog extends Animal{
     }
 
     makeSound() : string {
-        return 'woef woef'
+        return this._sound
     }
 }
 
 class Cat extends Animal {
+    protected _name : string;
+    protected _type : string = 'cat';
+    protected _sound : string = 'miauw';
 
-    private _name : string;
-    private _type : string;
-
-    constructor(value) {
-        this._name = value;
-        this._type = 'cat';
-    }
+constructor(value) {
+    super(value);
+}
 
     get name() {
         return this._name;
@@ -51,18 +54,18 @@ class Cat extends Animal {
     }
 
     makeSound() : string {
-        return 'Miauw miauw'
+        return this._sound
     }
 }
 
 class Parrot extends Animal {
-    private _name : string;
-    private _type : string;
+    protected _name : string;
+    protected _type : string = 'parrot';
+    protected _sound : string = 'i am a pirate';
 
-    constructor(value) {
-        this._name = value;
-        this._type = 'parrot';
-    }
+constructor(value) {
+    super(value);
+}
 
     get name() {
         return this._name;
@@ -73,18 +76,18 @@ class Parrot extends Animal {
     }
 
     makeSound() : string {
-        return 'I am a pirate'
+        return this._sound
     }
 }
 
 class Penguin extends Animal {
-    private _name : string;
-    private _type : string;
+    protected _name : string;
+    protected _sound : string = 'kwwraawk';
+    protected _type : string = 'penguin';
 
-    constructor(value) {
-        this._name = value;
-        this._type = 'penguin';
-    }
+constructor(value) {
+    super(value);
+}
 
     get name() {
         return this._name;
@@ -95,18 +98,18 @@ class Penguin extends Animal {
     }
 
     makeSound() : string {
-        return 'krrwaarwkk'
+        return this._sound;
     }
 }
 
 class Bear extends Animal {
-    private _name : string;
-    private _type : string;
+    protected _name : string;
+    protected _sound : string = 'raawrr';
+    protected _type : string = 'bear';
 
-    constructor(value) {
-        this._name = value;
-        this._type = 'Bear';
-    }
+constructor(value) {
+    super(value);
+}
 
     get name() {
         return this._name;
@@ -117,18 +120,18 @@ class Bear extends Animal {
     }
 
     makeSound() : string {
-        return 'raawrrr'
+        return this._sound
     }
 }
 
 class Zoo {
-    private _animals : Array<Object> = new Array<Object>();
+    private _animals : Array<Animal> = new Array<Animal>();
 
-    public addAnimal(animal: object) {
+    public addAnimal(animal: Animal) {
         this._animals.push(animal);
     }
 
-    get animals(): Array<Object> {
+    get animals(): Array<Animal> {
         return this._animals;
     }
 }
